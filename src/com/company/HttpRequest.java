@@ -1,30 +1,16 @@
 package com.company;
 
-import jdk.jfr.StackTrace;
-
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
-public class Main {
+public class HttpRequest {
     private static  HttpURLConnection connection;
     private static URL url;
     private int status;
-
-
-    public Main(){
-
-    }
-
-    public static void main(String[] args) {
-	// write your code here
-
-
+    public HttpRequest(){
 
     }
     public String getApi(String httpLink){
@@ -67,6 +53,4 @@ public class Main {
         String JSONData = responseContent.toString();
         return JSONData;
     }
-
-
 }

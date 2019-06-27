@@ -33,7 +33,7 @@ public class Gui {
     public Gui(int frameWidth,int frameHeight){
         //set up gui
 
-        Main main = new Main();
+        HttpRequest httpRequest = new HttpRequest();
 
 
 
@@ -86,7 +86,7 @@ public class Gui {
 //                System.out.println(textField.getText());
                 city = textField1.getText();
                 url1 = "http://api.openweathermap.org/data/2.5/weather?q=" + city + ",uk&APPID=f5ec4958320d2bcd3186ed8d573f2951";
-                jsonData = main.getApi(url1);
+                jsonData = httpRequest.getApi(url1);
 //                System.out.println(jsonData);
                 parseDescript();
                 parseTemp();
@@ -102,13 +102,13 @@ public class Gui {
                 url1 = "http://api.postcodes.io/postcodes/"+ postcode;
 
                 //get postcode api
-                jsonData = main.getApi(url1);
+                jsonData = httpRequest.getApi(url1);
 //                System.out.println(jsonData);
                 parseCoordinates();
                 url1 = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=f5ec4958320d2bcd3186ed8d573f2951";
 
                 //get weather api
-                jsonData = main.getApi(url1);
+                jsonData = httpRequest.getApi(url1);
                 System.out.println(jsonData);
                 parseDescript();
                 parseTemp();
